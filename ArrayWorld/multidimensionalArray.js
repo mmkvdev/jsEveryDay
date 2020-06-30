@@ -1,40 +1,49 @@
-// var m = 3, n = 2;
-function pathfinder(m, n) {
+// In JS declaring a MultiDimensional Array is not possible, hence we need to create them manually (Ahh!!! Lovely)
 
-    // Combinatorics Approach
-    let path=1;
-    for(let i=n;i<(m+n-1); i++) {
-        path *= i;
-        path /= (i-n+1);
-    }
-    return path;
-    // Dynamic Programming Approach
-    /*const path = []; // new Array(m,n);
+// Array of Arrays - MultiDimensional Arrays
+/*
+Creating a multi-dimensional array of size 3*2
+    0   1
+0   a   b
+1   c   d
+2   e   f
+*/
 
-    // console.log(path);
-    for (let i = 0; i < m; i++) {
-        path[i] = [];
-        for (let j = 0; j < n; j++) {
-            path[i][j] = [];
-        }
-    }
+// Approach is fairly simple just create an array that is capable of holding elements of the size 3
 
-    for (let i = 0; i < m; i++) {
-        path[i][0] = 1;
-    }
+const multiD = new Array(3);
 
-    for (let j = 0; j < n; j++) {
-        path[0][j] = 1;
-    }
-
-    for (let i = 0; i < m; i++) {
-        for (let j = 0; j < n; j++) {
-            path[i][j] = path[i - 1][j] + path[i][j - 1];
-        }
-    }
-    console.log(path);
-    // return path[m - 1][n - 1];*/
+// Now Loop through the multiD array and create an sub-array of size-2
+for (let i = 0; i < multiD.length; i++) {
+    multiD[i] = new Array(2);
 }
 
-console.log('Unique Paths are: ', pathfinder(3,2));
+// just manually assigned it and I don't kinda like it personally P.S.
+multiD[0][0] = 'a';
+multiD[0][1] = 'b';
+multiD[1][0] = 'c';
+multiD[1][1] = 'd';
+multiD[2][0] = 'e';
+multiD[2][1] = 'f';
+
+
+console.table(multiD); // Ahh, let's see what console.table does in the later script.
+
+// using forEach Loop
+multiD.forEach(row => {
+    row.forEach(col => {
+        // console.log(col);
+        // console.log(typeof col);
+    })
+});
+
+// using for Loop
+for (let i in multiD) {
+    // console.dir(i);
+    for(let j in multiD[i]) {
+        // console.dir(j);
+        console.dir(multiD[i][j]);
+    }
+}
+
 
