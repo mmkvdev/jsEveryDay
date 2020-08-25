@@ -8,15 +8,32 @@ const baz = { name: 'c', age: 24, interests: 'Coding' };
 console.log(bar);
 console.log(baz);
  */
-/* debugging with the above way, doesn't show us what variables are being logged. 
-Solution */
+/* 
+        debugging with the above way, doesn't show us what variables are being logged. 
+*/
 
-/* Optimised  */
-// Computed Property Names => adding variables to an object, not only it reduces the code footprint, but also tell us which variable defined this data.
-
+/* Optimised => 
+   Computed Property Names => adding variables to an object, not only it reduces the code footprint, but also tell us which variable defined this data.
+*/
 /* console.log('%c debugging', 'color: red; font-size: 20px');
 console.log({ foo, bar, baz });
  */
-// if objects share the common properties, may be we can display them in tables
+/* if objects share the common properties, may be we can display them in tables */
+// console.table([foo, bar, baz]);
 
-console.table([foo, bar, baz]);
+/* BenchMarking Performance */
+/* console.time('lopper');
+
+let i = 0;
+while (i < 1000000) {
+    i++;
+}
+
+console.timeEnd('lopper');
+ */
+/* StackTrace Logs */
+/* const deleteMe = () => console.trace('Cool gotcha!!!');
+
+deleteMe();
+deleteMe();
+ */
