@@ -1,5 +1,4 @@
 /* Destructuring */
-
 const apple = {
     logo: '🍎',
     brandValue: 1,
