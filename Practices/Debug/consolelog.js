@@ -4,10 +4,10 @@ const baz = { name: 'c', age: 24, interests: 'Coding' };
 
 /* Bad Code 👎 */
 
-/* console.log(foo);
+console.log(foo);
 console.log(bar);
 console.log(baz);
- */
+
 /* 
         debugging with the above way, doesn't show us what variables are being logged. 
 */
@@ -15,14 +15,14 @@ console.log(baz);
 /* Optimised => 
    Computed Property Names => adding variables to an object, not only it reduces the code footprint, but also tell us which variable defined this data.
 */
-/* console.log('%c debugging', 'color: red; font-size: 20px');
+console.log('%c debugging', 'color: red; font-size: 20px');
 console.log({ foo, bar, baz });
- */
+
 /* if objects share the common properties, may be we can display them in tables */
-// console.table([foo, bar, baz]);
+console.table([foo, bar, baz]);
 
 /* BenchMarking Performance */
-/* console.time('lopper');
+console.time('lopper');
 
 let i = 0;
 while (i < 1000000) {
@@ -30,10 +30,8 @@ while (i < 1000000) {
 }
 
 console.timeEnd('lopper');
- */
 /* StackTrace Logs */
-/* const deleteMe = () => console.trace('Cool gotcha!!!');
+const deleteMe = () => console.trace('Cool gotcha!!!');
 
 deleteMe();
 deleteMe();
- */
