@@ -1,1 +1,1 @@
-# jsEveryDay
+just js
